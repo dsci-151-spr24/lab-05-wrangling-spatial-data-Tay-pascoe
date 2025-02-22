@@ -69,7 +69,7 @@ dn_ak <- dennys %>%
   filter(state == "AK")
 nrow(dn_ak)
 ```
-
+***There are 3 denny's in Alaska***
 2.  Filter the La Quinta dataframe for Alaska (AK) and save the result as `lq_ak`. How many La Quinta locations are there in Alaska?
 
 ```{r}
@@ -77,7 +77,7 @@ lq_ak <- laquinta %>%
   filter(state == "AK")
 nrow(lq_ak)
 ```
-
+***There are 2 Laquinta's in Alaska***
 Next we'll calculate the distance between all Denny's and all La Quinta locations in Alaska.
 Let's take this step by step:
 
@@ -96,6 +96,8 @@ We'll need to calculate two distances for it: (1) distance between Denny's 1 and
 ![](img/dennys-laquinta-sketches/dennys-laquinta-sketches.003.png){width="300px" height="450px"}
 
 3.  How many pairings are there between all Denny's and all La Quinta locations in Alaska, i.e. how many distances do we need to calculate between the locations of these establishments in Alaska?
+
+***There are 3 pairings***
 
 In order to calculate these distances we need to first restructure our data to pair the Denny's and La Quinta locations.
 To do so, we will join the two data frames.
@@ -139,6 +141,13 @@ dn_lq_ak
 ```
 
 4.  How many observations are in the joined `dn_lq_ak` data frame? What are the names of the variables in this data frame.
+```{r}
+nrow(dn_lq_ak)
+
+names(dn_lq_ak)
+```
+
+***There are 6 observations.***
 
 `.x` in the variable names means the variable comes from the `x` data frame (the first argument in the `full_join` call, i.e. `dn_ak`), and `.y` means the variable comes from the `y` data frame.
 These varibles are renamed to include `.x` and `.y` because the two data frames have the same variables and it's not possible to have two variables in a data frame with the exact same name.
